@@ -1,13 +1,13 @@
 
 # coding: utf-8
 
-# In[ ]:
+# In[2]:
 
 
 #Medicamentos Selecionados: ANSIOLÍTICOS
 
 
-# In[6]:
+# In[3]:
 
 
 import numpy as np
@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# In[ ]:
+# In[4]:
 
 
 #Pesquisa sobre os medicamentos e inclusão em dicionários
@@ -130,7 +130,7 @@ noctal = {"Nome Comercial": "noctal",
           "As 3 Reacoes Adversas Mais Comuns": ["cefaléia", "sonolência", "náusea"]} 
 
 
-# In[8]:
+# In[5]:
 
 
 #Cálculo dos preço médio por comprimido dos medicamentos
@@ -216,7 +216,7 @@ for x in range(3):
 valor_comprimidoNoctal = mediaNoctal/noctal["Número de Comprimidos por Embalagem"]
 
 
-# In[9]:
+# In[6]:
 
 
 #Gráfico de preço médio por comprimido dos medicamentos
@@ -233,7 +233,7 @@ width = 0.5
 plt.bar(x, y, width, color="gold")
 
 
-# In[11]:
+# In[7]:
 
 
 #Cálculo do preço médio da mg do componente principal por medicamento
@@ -269,7 +269,7 @@ media_mgUrbanil = (mediaUrbanil/(urbanil["Número de Comprimidos por Embalagem"]
 media_mgNoctal = (mediaNoctal/(noctal["Número de Comprimidos por Embalagem"]*noctal["Quantidade do Composto Principal por Comprimido"]))
 
 
-# In[13]:
+# In[8]:
 
 
 #Gráfico do preço médio da mg do componente principal por medicamento
@@ -286,7 +286,7 @@ width = 0.5
 plt.bar(x, y, width, color="blue")
 
 
-# In[12]:
+# In[9]:
 
 
 #Gráfico de dose diária x meia vida de eliminação
@@ -389,7 +389,7 @@ plt.grid(True)
 plt.tight_layout()
 
 
-# In[14]:
+# In[10]:
 
 
 #Cálculo de valor para um tratamento de 7 dias com os medicamentos
@@ -406,7 +406,7 @@ trat7DiasUrbanil = (7*urbanil["Dose Diaria Em mg Para um Adulto"]*media_mgUrbani
 trat7DiasNoctal = (7*noctal["Dose Diaria Em mg Para um Adulto"]*media_mgNoctal)
 
 
-# In[24]:
+# In[11]:
 
 
 #Gráfico de valor para um tratamento de 7 dias com os medicamentos
@@ -423,9 +423,24 @@ width = 0.5
 plt.bar(x, y, width, color="red")
 
 
-# In[22]:
+# In[19]:
 
 
 #Resultado dos dados coletados para valor de tratamento
 print("O medicamento com tratamento mais caro para um período de 7 dias é o Rivotril, como mostra o gráfico acima")
+
+
+# In[23]:
+
+
+ansitec["Dose Criança"] = (6/24)*ansitec["Dose Diaria Em mg Para um Adulto"]
+frontal["Dose Criança"] = (6/24)*frontal["Dose Diaria Em mg Para um Adulto"]
+lorax["Dose Criança"] = (6/24)*lorax["Dose Diaria Em mg Para um Adulto"]
+noctal["Dose Criança"] = (6/24)*noctal["Dose Diaria Em mg Para um Adulto"]
+olcadil["Dose Criança"] = (6/24)*olcadil["Dose Diaria Em mg Para um Adulto"]
+rivotril["Dose Criança"] = (6/24)*rivotril["Dose Diaria Em mg Para um Adulto"]
+somalium["Dose Criança"] = (6/24)*somalium["Dose Diaria Em mg Para um Adulto"]
+tranxilene["Dose Criança"] = (6/24)*tranxilene["Dose Diaria Em mg Para um Adulto"]
+urbanil["Dose Criança"] = (6/24)*urbanil["Dose Diaria Em mg Para um Adulto"]
+valium["Dose Criança"] = (6/24)*valium["Dose Diaria Em mg Para um Adulto"]
 
